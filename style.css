@@ -1,0 +1,443 @@
+/* Basic setup for fonts */
+@font-face {
+    font-family: 'edison';
+    src: url('edison.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'edison_bold';
+    src: url('edison_bold.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BJb';
+    src: url('BaiJamjuree-Bold.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BJsb';
+    src: url('BaiJamjuree-SemiBold.ttf') format('truetype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Basic styling */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    flex-direction: column; /* Default: column layout for mobile-first */
+}
+
+/* Sticky container */
+.topcont {
+    background-color: #030222;
+    justify-content: center;
+    align-items: center;
+    flex-direction: flex-start;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 20px;
+    border: 1px solid #ddd;
+    position: -webkit-sticky;
+    position: sticky;
+}
+
+/* Content styling */
+.content {
+    margin: 0;
+    padding: 30px;
+    padding-top: 0;
+    box-sizing: border-box;
+}
+
+/* Mobile devices: sticky at the top taking 100% of the width */
+@media (max-width: 700px) {
+    .container {
+        flex-direction: column; /* Stack sticky container and content vertically */
+    }
+
+    .topcont {
+        width: 100%; /* Sticky container takes 100% of the width */
+        top: 0;
+    }
+
+    .content {
+        margin-top: 20px; /* Space between sticky container and content */
+    }
+
+}
+
+/* Tablet or larger devices: sticky to the left taking 40% of the width */
+@media (min-width: 700px) {
+    .container {
+        display: flex;
+        flex-direction: row; /* Arrange sticky container and content side by side */
+        height: 100vh; /* Ensure full height for the container */
+    }
+
+    .topcont {
+        top: 20px;
+        left: 0;
+        width: 350px; /* Sticky container takes up 40% of the width */
+        height: 100vh; /* Full viewport height */
+    }
+
+    .content {
+        /* Make content take the remaining space after the sticky container */
+        width: calc(100% - 350px); /* Remaining 60% width */
+        padding-left: 20px; /* Optional padding between sticky and content */
+    }
+
+}
+
+
+
+
+
+
+
+
+.cheek:hover {
+    color: #ffaec2;
+    transition: color 0.3s ease;
+    cursor:copy;
+}
+
+.thumbsup {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.thumbsup:hover {
+    transform: rotate(-20deg) translateY(20px) translateX(2px);
+}
+
+
+h1 {
+    color: #FBAE00;
+    font-family: 'edison_bold', serif;
+    margin-bottom: -10px;
+    text-align: center;
+}
+
+.KAH:hover {
+    color: #4b48b7;
+}
+
+.aidah:hover{
+    text-decoration: underline;
+}
+
+a {
+    color: #A1A5C2;
+    text-decoration: none;
+}
+a:hover {
+    color: #FF8764;
+}
+
+.gradtext {
+    background: linear-gradient(180deg, #FF8764, #FF799B);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: #A1A5C2;
+    font-family: 'BJsb', serif;
+    font-size: 14px;
+    margin-bottom: 9px;
+    text-align: center;
+}
+
+.BUTTS {
+    font-family: 'BJsb';
+    display: flex;
+    justify-content: center;
+}
+
+.btn-contme, .btn-tuts, .btn-anims {
+    font-family: 'BJb';
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    background: #030222;
+    border-radius: 8px;
+    text-align: center;
+    color: #FBAE00;
+    height: 35px;
+    width: 150px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4px;
+}
+.btn-contme:hover, .btn-tuts:hover, .btn-anims:hover {
+    background-color: #06003C;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+    background: linear-gradient(194deg, #0a0062, #780001);
+}
+
+.btn-contme {
+    border: 3px solid #FBAE00;
+    color: #FBAE00;
+}
+
+.btn-tuts {
+    border: 3px solid #FF8764;
+    color: #FF8764;
+}
+
+.btn-anims {
+    border: 3px solid #FF799B;
+    color: #FF799B;
+}
+
+.leftbuttons, .rightbuttons {
+    padding: 10px;
+    /*border: 1px solid #ccc;*/
+    height: 115px;
+}
+
+.rightbuttons {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.nexttut {
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px;
+    font-family:'BJb';
+
+    background: none;
+    border-radius: 10px;
+    border: 3px solid #FBAE00;
+
+    text-align: center;
+    color: #FBAE00;
+    width: 150px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-top: 0px;
+}
+
+.nexttut:hover {
+    background-color: #06003C;
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+    
+}
+
+.scard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #FBAE00;
+    color: rgb(6, 0, 30);
+    border-radius: 6px;
+    width: 150px;
+    height: 58px;
+    text-align: center;
+    line-height: 30px;
+    font-size: 18px;
+    background: linear-gradient(180deg, #FBAE00, #FF8764, #FF799B);
+    overflow: hidden;
+}
+.scard:hover {
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+    background: linear-gradient(180deg, #06003C, #780001, #FF799B);
+    
+}
+
+.scard:hover::after {
+    content: "??";
+    color: #030222;
+    font-size: 16px;
+}
+
+
+.rightbuttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 10px; 
+}
+
+.nexttut {
+    flex-shrink: 0;
+    flex-grow: 0;
+    line-height: 2;
+    width: auto;
+}
+
+.reqbox {
+    font-family: 'BJb';
+    font-weight: bold;
+    font-size: 15px;
+    padding: 10px;
+    background: #06003C;
+    border-radius: 8px;
+    text-align: center;
+    border: 3px solid #FBAE00;
+
+    color: #FF8764;
+    letter-spacing: 0.5rem;
+
+
+    height: 35px;
+
+    width: 100%;
+    max-width: 348px;
+    min-width: 0;
+
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4px;
+    margin: 5px auto; 
+
+
+    transition: all 0.3s ease;
+    
+}
+
+.reqbox:hover {
+    background-color: #0d0057;
+    transform: scale(1.01);
+    transition: all 0.3s ease;
+    background: linear-gradient(180deg, #06003C, #780001);
+}
+
+/* Popup Styling */
+.popup {
+    width: 300px;
+    background-color: #06003C;
+    padding: 20px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 12px;
+    display: none;
+    z-index: 1000;
+    border: 3px solid #FBAE00;
+}
+
+.popup h1 {
+    color: white;
+}
+
+.popup p {
+    color: white;
+}
+
+.popup .close {
+    font-family: 'BJb';
+    font-weight: bold;
+    font-size: 16px;
+    padding: 10px;
+    background: #780001;
+    border-radius: 8px;
+    text-align: center;
+    color: #FBAE00;
+    height: 35px;
+    width: 150px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+    border: 3px solid #FBAE00;
+    justify-content: center;
+    margin: 0 auto; 
+}
+
+.popup .close:hover {
+    background-color: #820d28;
+}
+
+
+/*LINKIESSS */
+.social-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: left;
+    font-family: 'BJb';
+}
+
+.social-icon {
+    display: flex;
+    align-items: left;
+    color: #A1A5C2;
+    text-decoration: none;
+    font-size: 1.2rem;
+    gap: 8px;
+    padding: 0px 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: #06003C;
+    color: #FBAE00;
+}
+
+.social-icon i {
+    font-size: 1.6rem;
+}
+
+
+/* Style for the copy button */
+.copymail {
+    font-family: 'BJb';
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px;
+    background: #030222;
+    border-radius: 8px;
+    text-align: center;
+    border: 3px solid #A1A5C2;
+    color: #A1A5C2;
+    height: 25px;
+    width: 70px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+  
+  .copymail:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style for the feedback message */
+  #feedback {
+    color: green;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
